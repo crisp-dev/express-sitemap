@@ -304,11 +304,9 @@ Sitemap.prototype.xml = function() {
 
   var head = '<?xml version="1.0" encoding="UTF-8"?>';
 
-  head += '<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"';
-  head += ' xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd http://www.w3.org/TR/xhtml11/xhtml11_schema.html http://www.w3.org/2002/08/xhtml/xhtml1-strict.xsd"';
-  head += ' xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"';
-  var lang = ' xmlns:xhtml="http://www.w3.org/TR/xhtml11/xhtml11_schema.html">';
-  var langFlag = true;
+  head += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"';
+  head += ' xmlns:xhtml="http://www.w3.org/1999/xhtml"';
+  head += ' xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">';
 
   var data = '';
 
@@ -336,7 +334,6 @@ Sitemap.prototype.xml = function() {
         }
 
         if (rr.alternatepages) { // languages
-          langFlag = true;
           var pages = rr.alternatepages;
 
           for ( var position in pages) {
@@ -360,10 +357,6 @@ Sitemap.prototype.xml = function() {
 
       data += '</url>';
     }
-  }
-
-  if (langFlag === true) { // fix right xml head
-    head += lang;
   }
 
   return head + data + tail;
