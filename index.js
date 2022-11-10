@@ -303,8 +303,10 @@ Sitemap.prototype.xml = function() {
   var tail = '</urlset>';
 
   var head = '<?xml version="1.0" encoding="UTF-8"?>';
+
   head += '<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"';
-  head += ' xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9"';
+  head += ' xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd http://www.w3.org/TR/xhtml11/xhtml11_schema.html http://www.w3.org/2002/08/xhtml/xhtml1-strict.xsd"';
+  head += ' xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"';
   var lang = ' xmlns:xhtml="http://www.w3.org/TR/xhtml11/xhtml11_schema.html">';
   var langFlag = true;
 
