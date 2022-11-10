@@ -303,14 +303,10 @@ Sitemap.prototype.xml = function() {
   var tail = '</urlset>';
 
   var head = '<?xml version="1.0" encoding="UTF-8"?>';
-  if (this.my.head) {
-    head += this.my.head;
-  } else {
-    head += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">';
-  }
-
-  var lang = ' xmlns:xhtml="http://www.w3.org/1999/xhtml">';
-  var langFlag = false;
+  head += '<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"';
+  head += ' xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9"';
+  var lang = ' xmlns:xhtml="http://www.w3.org/TR/xhtml11/xhtml11_schema.html">';
+  var langFlag = true;
 
   var data = '';
 
@@ -365,7 +361,7 @@ Sitemap.prototype.xml = function() {
   }
 
   if (langFlag === true) { // fix right xml head
-    head = head.substr(0, head.length - 1) + lang;
+    head += lang;
   }
 
   return head + data + tail;
