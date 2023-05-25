@@ -304,9 +304,7 @@ Sitemap.prototype.xml = function() {
 
   var head = '<?xml version="1.0" encoding="UTF-8"?>';
 
-  head += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"';
-  head += ' xmlns:xhtml="http://www.w3.org/1999/xhtml"';
-  head += ' xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">';
+  head += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">';
 
   var data = '';
 
