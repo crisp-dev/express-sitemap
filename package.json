@@ -45,7 +45,7 @@
     "node": ">=4"
   },
   "scripts": {
-    "prepare": "npm prune",
+    "_prepare": "npm prune",
     "prepublishOnly": "grunt",
     "test": "npm run express4 && npm install express@3 && npm run express3",
     "test-cov": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- test/*",
